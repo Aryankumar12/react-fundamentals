@@ -1,39 +1,14 @@
-import React, { useContext } from 'react'
+import React from 'react'
 
-import { UserContext } from './context/UserContext';
-
-const Card = () => {
-
-    const user = useContext(UserContext);
-   
+const Card = ({name,email}) => {
   return (
-    <div style={styles.box}>
+    <>
+        <h1>CARDS</h1>
 
-
-        <h2>User List</h2>
-        {user.map((user)=>(
-            <div key= {user.id}>
-                <p>First Name: {user.firstName}</p>
-                <p>Last Name: {user.lastName}</p>
-                
-            </div>
-        ))}
-        
-
-
-
-    </div>
+    <h3>Name: {name}</h3>
+    <h3>Email: {email}</h3>
+    </>
   )
-}
-
-const styles= {
-    box:{
-        border: '2px solid black',
-        padding: '20px',
-        margin: '20px',
-        textAlign: 'center',
-        
-    }
 }
 
 export default Card
